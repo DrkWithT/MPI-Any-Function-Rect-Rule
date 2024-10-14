@@ -12,4 +12,4 @@ add_executable(MPIRectRule)
 target_include_directories(MPIRectRule PUBLIC "${MY_INCLUDES}")
 target_sources(MPIRectRule PRIVATE Main.cpp)
 # todo: link libraries Syntax & Models when they're done!
-target_link_libraries(MPIRectRule PRIVATE Frontend)
+# target_link_libraries(MPIRectRule PRIVATE Frontend)
