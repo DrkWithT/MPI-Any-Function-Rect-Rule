@@ -10,6 +10,7 @@
 
 #include <cmath>
 #include <stack>
+
 #include "Models/FunctionParts.hpp"
 #include "Models/XFunction.hpp"
 
@@ -58,6 +59,7 @@ namespace MPIRectRule::Models {
                     temps.pop();
 
                     temps.push(arg_1 / arg_0);
+                    break;
                 case pow:
                     arg_0 = temps.top();
                     temps.pop();
@@ -65,6 +67,7 @@ namespace MPIRectRule::Models {
                     temps.pop();
 
                     temps.push(std::pow(arg_1, arg_0));
+                    break;
                 case ComputeOp::nop:
                 default:
                     break;

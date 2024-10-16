@@ -2,9 +2,10 @@
 set(MY_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/Include")
 # set(MPI_INCLUDE_DIR "${MPI_INCLUDE_PATH}")
 
+add_subdirectory(Models)
 add_subdirectory(Frontend)
 add_subdirectory(Syntax)
-# add_subdirectory(Models)
+add_subdirectory(Backend)
 add_subdirectory(Tests)
 
 add_executable(MPIRectRule)
