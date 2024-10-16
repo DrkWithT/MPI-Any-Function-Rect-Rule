@@ -4,6 +4,7 @@
 namespace MPIRectRule::Models {
     /// @note add, sub, mul, div, and pow opcodes are binary ops.
     enum ComputeOp {
+        nop,
         load_x,
         push_const,
         // pop_const,

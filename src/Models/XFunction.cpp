@@ -65,6 +65,7 @@ namespace MPIRectRule::Models {
                     temps.pop();
 
                     temps.push(std::pow(arg_1, arg_0));
+                case ComputeOp::nop:
                 default:
                     break;
             }

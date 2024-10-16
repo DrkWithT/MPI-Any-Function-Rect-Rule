@@ -77,7 +77,7 @@ namespace MPIRectRule::Frontend {
             return std::make_unique<Syntax::UnaryExpr>(parseLiteral(), Syntax::ExprOp::negate);
         }
 
-        return std::make_unique<Syntax::UnaryExpr>(parseLiteral(), Syntax::ExprOp::identity);
+        return parseLiteral();
     }
 
     std::unique_ptr<Syntax::IAstNode> Parser::parsePower() {
