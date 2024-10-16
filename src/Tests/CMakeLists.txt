@@ -19,3 +19,4 @@ endfunction()
 
 make_tester(TITLE TestLexer SRC TestLexer.cpp INCLUDE_DIR "${MY_INCLUDES}" LIBS Frontend)
 make_tester(TITLE TestParser SRC TestParser.cpp INCLUDE_DIR "${MY_INCLUDES}" LIBS Frontend Syntax)
+make_tester(TITLE TestEmitter SRC TestEmitter.cpp INCLUDE_DIR "${MY_INCLUDES}" LIBS Frontend Syntax Backend Models)

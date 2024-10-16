@@ -76,4 +76,9 @@ namespace MPIRectRule::Backend {
             m_compiled_steps.push_back({0, ComputeOp::nop});
         }
     }
+
+    Models::XFunction FuncEmitter::generateFunction(std::unique_ptr<Syntax::IAstNode>& ast_root) {
+        ast_root->acceptVisitor(*this);
+        return {std::move(m_compiled_steps)};
+    }
 }
