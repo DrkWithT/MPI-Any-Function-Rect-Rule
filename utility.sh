@@ -1,7 +1,7 @@
 # utility.sh: builds program or counts SLOC for project
 
 if [[ $# -ne 1 ]]; then
-    echo "usage: ./utility.sh [help | sloc | deb | rel | test]"
+    echo "usage: ./utility.sh [help | sloc | deb | rel | test | run]"
     exit 1
 fi
 
@@ -17,6 +17,8 @@ elif [[ "$choice" = "rel" ]]; then
     cp ./Build/compile_commands.json .
 elif [[ "$choice" = "test" ]]; then
     ctest --test-dir Build -V --timeout 3
+elif [[ "$choice" = "run" ]]; then
+    mpirun -n 2 ./Build/src/MPIRectRule
 else
     echo "usage: ./utility.sh [help | sloc | deb | rel | test]"
 fi
