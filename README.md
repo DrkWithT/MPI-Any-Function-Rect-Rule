@@ -6,12 +6,13 @@ A MPI C++ project for doing numeric integral approximation with the rectangle ru
 ### Requirements:
  - Git
  - CMake 3.16+
- - A C++ compiler e.g clang++, g++, etc.
+ - A C++ MPI compiler e.g `mpicxx`, etc.
  - The `mpi.h` AKA the MPI library header.
 
-### TODOs:
- - Add, test, and integrate instruction generator for AST.
- - Create skeleton of parallelized code:
-    - Root takes user input to parse and compile to a function exclusively.
-    - Root also serializes the instructions and broadcasts them to other processes as the "x-function".
- - Test more!
+### Sample Output:
+
+![Sample Program Output](./My_Integral_Test.png?raw=true "Title")
+
+### Check by Desmos Result:
+
+![Sample Desmos Output](./Desmos_Pure_Integral.png?raw=true "Title")
