@@ -10,7 +10,6 @@
 
 #include <algorithm>
 #include "MpiWraps/Wrappers.hpp"
-#include "mpi.h"
 
 namespace MPIRectRule::MpiWraps {
     MPIContext::MPIContext()

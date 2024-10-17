@@ -11,6 +11,7 @@
  * 
  */
 
+#include <mpi.h>
 #include <algorithm>
 #include <memory>
 #include <string>
@@ -35,7 +36,7 @@ void getFunctionText(std::unique_ptr<char[]>& source_buffer, MpiWraps::MPIContex
         do {
             std::cout << "Enter function (at most 50 letters long):\n";
             std::getline(std::cin, temp_input);
-        } while (temp_input.size() > 0 && temp_input.size() <= 50);
+        } while (temp_input.size() == 0 && temp_input.size() > 50);
 
         const char* temp_src_ptr = temp_input.c_str();
         std::copy(temp_src_ptr, temp_src_ptr + temp_input.size(), source_buffer.get());
