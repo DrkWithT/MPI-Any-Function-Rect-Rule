@@ -36,7 +36,7 @@ void getFunctionText(std::unique_ptr<char[]>& source_buffer, MpiWraps::MPIContex
         do {
             std::cout << "Enter function (at most 50 letters long):\n";
             std::getline(std::cin, temp_input);
-        } while (temp_input.size() == 0 && temp_input.size() > 50);
+        } while (temp_input.size() == 0 || temp_input.size() > 50);
 
         const char* temp_src_ptr = temp_input.c_str();
         std::copy(temp_src_ptr, temp_src_ptr + temp_input.size(), source_buffer.get());
@@ -122,6 +122,15 @@ int main() {
     /// Compile simple x-function from local source copy.
     source_str = source_buffer.get();
     auto fn = compileFromSource(source_str);
+
+    /// If the function parses well, the AST exists. Thus the AST results in a non-empty, valid sequence of steps.
+    if (fn.steps.size() == 0) {
+        if (ctx.getProcessRank() == ctx.getMasterRank()) {
+            std::cerr << "Error: entered function was invalid. Please check messages above.\n";
+        }
+
+        return 1;
+    }
 
     /// Evaluate parts of the rectangle rule sum in parallel!
     total_integral = doParallelRectSum(local_a, local_n, local_dx, fn, ctx);
