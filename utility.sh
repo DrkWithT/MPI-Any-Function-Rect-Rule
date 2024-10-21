@@ -20,5 +20,5 @@ elif [[ "$choice" = "test" ]]; then
 elif [[ "$choice" = "run" ]]; then
     mpirun -n 2 ./Build/src/MPIRectRule
 else
-    echo "usage: ./utility.sh [help | sloc | deb | rel | test]"
+    echo "usage: ./utility.sh [help | sloc | deb | rel | test | run]"
 fi
